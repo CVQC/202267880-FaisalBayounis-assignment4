@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
 
     <!-- Skip to main content (Accessibility) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -39,7 +41,7 @@
         <!-- Header & Navigation -->
         <header class="header">
             <div class="header-text">
-                <h1>Faisal Bayounis</h1>
+                <h1 class="hero-name">Faisal Bayounis</h1>
                 <p class="tagline">Aspiring Web Developer | Building the Future</p>
             </div>
             <nav aria-label="Main navigation">
@@ -72,6 +74,26 @@
         </section>
 
         <!-- Skills Section -->
+
+        <!-- Stats Counter Section -->
+        <div class="stats-section" aria-label="Portfolio statistics">
+            <div class="stat-item">
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-label">Skills</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="3">0</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="3">0</div>
+                <div class="stat-label">APIs Used</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">% Passion</div>
+            </div>
+        </div>
         <section id="skills" class="section-skills" aria-labelledby="skills-title">
             <h2 class="section-title" id="skills-title">Skills</h2>
             <div class="skills-grid">
@@ -82,6 +104,7 @@
                     <div class="skill-extra" aria-hidden="true">
                         <p>I build responsive, accessible UIs using modern CSS techniques like Flexbox and Grid.</p>
                     </div>
+                    <div class="skill-progress"><div class="skill-progress-bar" data-width="85"></div></div>
                     <button class="skill-toggle" aria-expanded="false" aria-controls="skill-extra-1">Show more ▼</button>
                 </div>
                 <div class="skill-card" tabindex="0">
@@ -91,6 +114,7 @@
                     <div class="skill-extra" aria-hidden="true">
                         <p>I use Git for version control and Chrome DevTools to debug and optimize performance.</p>
                     </div>
+                    <div class="skill-progress"><div class="skill-progress-bar" data-width="80"></div></div>
                     <button class="skill-toggle" aria-expanded="false" aria-controls="skill-extra-2">Show more ▼</button>
                 </div>
                 <div class="skill-card" tabindex="0">
@@ -100,6 +124,7 @@
                     <div class="skill-extra" aria-hidden="true">
                         <p>I follow a mobile-first approach and apply UI/UX principles for clean, user-friendly layouts.</p>
                     </div>
+                    <div class="skill-progress"><div class="skill-progress-bar" data-width="75"></div></div>
                     <button class="skill-toggle" aria-expanded="false" aria-controls="skill-extra-3">Show more ▼</button>
                 </div>
                 <div class="skill-card" tabindex="0">
@@ -109,6 +134,7 @@
                     <div class="skill-extra" aria-hidden="true">
                         <p>Currently learning React and backend development to become a full-stack developer.</p>
                     </div>
+                    <div class="skill-progress"><div class="skill-progress-bar" data-width="60"></div></div>
                     <button class="skill-toggle" aria-expanded="false" aria-controls="skill-extra-4">Show more ▼</button>
                 </div>
             </div>
@@ -255,6 +281,9 @@
         </footer>
 
     </div><!-- end .container -->
+
+    <!-- Innovation: Back to Top -->
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
 
     <script src="js/script.js" defer></script>
 </body>

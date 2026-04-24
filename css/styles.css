@@ -1306,3 +1306,249 @@ body.dark .skill-toggle { border-color: var(--primary); }
     body { background: white; }
     .container { box-shadow: none; }
 }
+
+/* ===== INNOVATION: Back to Top Button ===== */
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--purple));
+    color: white;
+    border: none;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 12px 28px rgba(52, 152, 219, 0.45);
+}
+
+/* ===== INNOVATION: Typing Animation ===== */
+.tagline {
+    font-weight: 600;
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    min-height: 1.4em;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: var(--primary);
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+/* ===== INNOVATION: Skill Progress Bars ===== */
+.skill-progress {
+    margin-top: 0.75rem;
+    background: var(--bg-surface);
+    border-radius: var(--radius-full);
+    height: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.skill-progress-bar {
+    height: 100%;
+    border-radius: var(--radius-full);
+    width: 0%;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card:nth-child(1) .skill-progress-bar { background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+.skill-card:nth-child(2) .skill-progress-bar { background: linear-gradient(90deg, var(--secondary), var(--primary)); }
+.skill-card:nth-child(3) .skill-progress-bar { background: linear-gradient(90deg, var(--purple), var(--primary)); }
+.skill-card:nth-child(4) .skill-progress-bar { background: linear-gradient(90deg, var(--orange), var(--accent)); }
+
+body.dark .skill-progress {
+    background: #2d3748;
+    border-color: #4a5568;
+}
+
+/* ===== INNOVATION: Section Reveal Animation ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== INNOVATION: Particle Background on Header ===== */
+.header {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== INNOVATION: Glowing section titles on hover ===== */
+.section-title {
+    transition: filter 0.3s ease;
+}
+
+.section-title:hover {
+    filter: drop-shadow(0 0 12px rgba(52, 152, 219, 0.5));
+}
+
+/* ===== INNOVATION: Card Tilt Effect placeholder ===== */
+.project-card, .skill-card, .github-card, .music-card {
+    will-change: transform;
+}
+
+/* ===== INNOVATION: Smooth page load fade ===== */
+body {
+    animation: pageFadeIn 0.6s ease-out;
+}
+
+@keyframes pageFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* ===== INNOVATION: Tag shimmer on hover ===== */
+.tag {
+    position: relative;
+    overflow: hidden;
+}
+
+.tag::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+}
+
+.tag:hover::after {
+    left: 150%;
+}
+
+/* ===== INNOVATION: Nav link ripple ===== */
+.nav-links a {
+    overflow: hidden;
+}
+
+/* ===== INNOVATION: Quote fade transition ===== */
+#quote-text, #quote-author {
+    transition: opacity 0.4s ease;
+}
+
+#quote-text.fade, #quote-author.fade {
+    opacity: 0;
+}
+
+/* ===== INNOVATION: GitHub card slide-in ===== */
+.github-card {
+    animation: fadeInUp 0.5s ease-out both;
+}
+
+.github-card:nth-child(1) { animation-delay: 0.05s; }
+.github-card:nth-child(2) { animation-delay: 0.1s; }
+.github-card:nth-child(3) { animation-delay: 0.15s; }
+.github-card:nth-child(4) { animation-delay: 0.2s; }
+.github-card:nth-child(5) { animation-delay: 0.25s; }
+.github-card:nth-child(6) { animation-delay: 0.3s; }
+
+/* ===== INNOVATION: Footer wave ===== */
+.footer {
+    position: relative;
+}
+
+
+
+/* ===== Scroll Progress Bar ===== */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary), var(--purple), var(--secondary));
+    z-index: 99999;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+}
+
+/* ===== Gradient Text on Name ===== */
+.hero-name {
+    background: linear-gradient(135deg, #3498db, #9b59b6, #e74c3c, #f39c12);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0%   50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0%   50%; }
+}
+
+/* ===== Stats Counter Section ===== */
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-8);
+    flex-wrap: wrap;
+    padding: var(--space-6) 0;
+    margin: var(--space-6) 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stat-item {
+    text-align: center;
+    min-width: 100px;
+}
+
+.stat-number {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: var(--text-sm);
+    color: var(--text-light);
+    margin-top: var(--space-1);
+}
+
+body.dark .stats-section {
+    border-color: var(--border-dark);
+}

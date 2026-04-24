@@ -203,7 +203,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // ===== Expand / Collapse Skills =====
     document.querySelectorAll('.skill-toggle').forEach(btn => {
         btn.addEventListener('click', function () {
-            const extra   = this.previousElementSibling;
+            const card    = this.closest('.skill-card');
+            const extra   = card.querySelector('.skill-extra');
             const isOpen  = extra.classList.toggle('open');
             extra.setAttribute('aria-hidden', String(!isOpen));
             this.setAttribute('aria-expanded', String(isOpen));
@@ -495,3 +496,167 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 }); // ← END of DOMContentLoaded
+
+// ===== INNOVATION: Back to Top Button =====
+(function() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    window.addEventListener('scroll', debounce(function() {
+        btn.classList.toggle('visible', window.pageYOffset > 400);
+    }, 100));
+
+    btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
+
+// ===== INNOVATION: Typing Animation for Tagline =====
+(function() {
+    const tagline = document.querySelector('.tagline');
+    if (!tagline) return;
+
+    const text   = 'Aspiring Web Developer | Building the Future';
+    tagline.textContent = '';
+
+    const cursorEl = document.createElement('span');
+    cursorEl.className = 'typing-cursor';
+    tagline.appendChild(cursorEl);
+
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            tagline.insertBefore(document.createTextNode(text[i]), cursorEl);
+            i++;
+            setTimeout(type, 55);
+        }
+    }
+    setTimeout(type, 600);
+})();
+
+// ===== INNOVATION: Skill Progress Bars =====
+(function() {
+    const bars = document.querySelectorAll('.skill-progress-bar');
+    if (!bars.length) return;
+
+    const progressObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar   = entry.target;
+                const width = bar.dataset.width || '70';
+                setTimeout(() => { bar.style.width = width + '%'; }, 200);
+                progressObserver.unobserve(bar);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    bars.forEach(bar => progressObserver.observe(bar));
+})();
+
+// ===== INNOVATION: Section Reveal on Scroll =====
+(function() {
+    const revealEls = document.querySelectorAll(
+        '.section-about, .section-skills, .section-projects, .section-contact, .section-github, .section-quote, .section-music'
+    );
+
+    revealEls.forEach(el => el.classList.add('reveal'));
+
+    const revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+})();
+
+// ===== INNOVATION: Card 3D Tilt Effect =====
+(function() {
+    const cards = document.querySelectorAll('.project-card, .skill-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            const rect   = card.getBoundingClientRect();
+            const x      = e.clientX - rect.left;
+            const y      = e.clientY - rect.top;
+            const centerX = rect.width  / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -6;
+            const rotateY = ((x - centerX) / centerX) *  6;
+            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        });
+
+        card.addEventListener('mouseleave', function() {
+            card.style.transform = '';
+            card.style.transition = 'transform 0.5s ease';
+        });
+
+        card.addEventListener('mouseenter', function() {
+            card.style.transition = 'transform 0.1s ease';
+        });
+    });
+})();
+
+// ===== INNOVATION: Quote Fade Transition =====
+(function() {
+    const origFetchQuote = window._fetchQuote;
+    const quoteText   = document.getElementById('quote-text');
+    const quoteAuthor = document.getElementById('quote-author');
+    const newQuoteBtn = document.getElementById('new-quote-btn');
+    const quoteError  = document.getElementById('quote-error');
+    if (!newQuoteBtn) return;
+
+    newQuoteBtn.addEventListener('click', function() {
+        quoteText.classList.add('fade');
+        quoteAuthor.classList.add('fade');
+        setTimeout(() => {
+            quoteText.classList.remove('fade');
+            quoteAuthor.classList.remove('fade');
+        }, 800);
+    }, true);
+})();
+
+// ===== Scroll Progress Bar =====
+(function () {
+    const bar = document.getElementById('scroll-progress');
+    if (!bar) return;
+    window.addEventListener('scroll', function () {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+    }, { passive: true });
+})();
+
+// ===== Animated Number Counters =====
+(function () {
+    const counters = document.querySelectorAll('.stat-number');
+    if (!counters.length) return;
+
+    const counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el     = entry.target;
+            const target = parseInt(el.dataset.target, 10);
+            const duration = 1500;
+            const step   = Math.ceil(target / (duration / 16));
+            let current  = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    el.textContent = target + (target === 100 ? '%' : '+');
+                    clearInterval(timer);
+                } else {
+                    el.textContent = current;
+                }
+            }, 16);
+
+            counterObserver.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => counterObserver.observe(c));
+})();

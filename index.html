@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Faisal Bayounis - Aspiring Web Developer Portfolio showcasing projects, skills, and contact information.">
+    <title>Faisal Bayounis | Web Developer Portfolio</title>
+
+    <!-- Performance: Preconnect to external APIs -->
+    <link rel="preconnect" href="https://api.github.com">
+    <link rel="preconnect" href="https://dummyjson.com">
+    <link rel="preconnect" href="https://itunes.apple.com">
+    <link rel="dns-prefetch" href="https://api.github.com">
+    <link rel="dns-prefetch" href="https://dummyjson.com">
+    <link rel="dns-prefetch" href="https://itunes.apple.com">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body onload="window.scrollTo(0, 0);">
+    <!-- Greeting Message -->
+    <div id="greeting-banner" class="greeting-banner">
+        <p id="greeting"></p>
+        <div id="name-prompt" class="name-prompt">
+            <input type="text" id="visitor-name-input" placeholder="Enter your name..." maxlength="30" />
+            <button id="save-name-btn">👋 Save Name</button>
+            <button id="skip-name-btn">Skip</button>
+        </div>
+        <p id="returning-msg" class="returning-msg"></p>
+        <button id="reset-name-btn" class="reset-name-btn">✏️ Change Name</button>
+    </div>
+
+    <div class="container">
+        <!-- Header & Navigation -->
+        <header class="header">
+            <div class="header-text">
+                <h1>Faisal Bayounis</h1>
+                <p class="tagline">Aspiring Web Developer | Building the Future</p>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#github">GitHub</a></li>
+                    <li><a href="#quote">Quote</a></li>
+                    <li><a href="#music">Music</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="section-about">
+            <div class="about-content">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    I'm a computer science student passionate about creating clean, user-friendly websites
+                    that solve real problems. I love learning new technologies and building projects that
+                    make a difference. My goal is to become a skilled full-stack developer who can bring
+                    creative ideas to life through code.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Frontend</h3>
+                    <p>HTML5, CSS3, JavaScript, Responsive Design</p>
+                    <div class="skill-extra">
+                        <p>I build responsive, accessible UIs using modern CSS techniques like Flexbox and Grid.</p>
+                    </div>
+                    <button class="skill-toggle">Show more ▼</button>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Development</h3>
+                    <p>Git, VS Code, Chrome DevTools, Debugging</p>
+                    <div class="skill-extra">
+                        <p>I use Git for version control and Chrome DevTools to debug and optimize performance.</p>
+                    </div>
+                    <button class="skill-toggle">Show more ▼</button>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📱</div>
+                    <h3>Design</h3>
+                    <p>Flexbox, Grid, Mobile-First, UI/UX Principles</p>
+                    <div class="skill-extra">
+                        <p>I follow a mobile-first approach and apply UI/UX principles for clean, user-friendly layouts.</p>
+                    </div>
+                    <button class="skill-toggle">Show more ▼</button>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🚀</div>
+                    <h3>Learning</h3>
+                    <p>React, Node.js, APIs, Database Design</p>
+                    <div class="skill-extra">
+                        <p>Currently learning React and backend development to become a full-stack developer.</p>
+                    </div>
+                    <button class="skill-toggle">Show more ▼</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-controls" aria-label="Project controls">
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="coe">COE</button>
+                    <button class="filter-btn" data-filter="cs">CS</button>
+                </div>
+                <div class="project-sort">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select">
+                        <option value="default">Default</option>
+                        <option value="name-asc">Name A→Z</option>
+                        <option value="name-desc">Name Z→A</option>
+                    </select>
+                </div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="coe">
+                    <div class="project-image">
+                        <img src="assets/images/logisimicon_94525.png"
+                             alt="16-Bit Processor Simulation Screenshot"
+                             loading="lazy"
+                             width="400" height="250">
+                    </div>
+                    <div class="project-content">
+                        <h3>16-Bit Processor Simulation Using Logic Gates</h3>
+                        <p>Designed and implemented a 16-bit processor using fundamental digital logic components.
+                        The project demonstrates a strong understanding of computer architecture,
+                        binary operations, and instruction execution at the hardware level.</p>
+                        <div class="project-tags">
+                            <span class="tag">Digital Logic</span>
+                            <span class="tag">Computer Architecture</span>
+                            <span class="tag">Processor Simulation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="cs">
+                    <div class="project-image">
+                        <img src="assets/images/javafx_logo_color_1r.jpg"
+                             alt="Event Management System Screenshot"
+                             loading="lazy"
+                             width="400" height="250">
+                    </div>
+                    <div class="project-content">
+                        <h3>Event Management System (JavaFX)</h3>
+                        <p>Developed a JavaFX-based event management system featuring both admin and user interfaces.
+                        Administrators can create and manage events, while users can browse and book available events
+                        through an interactive and user-friendly interface.</p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">JavaFX</span>
+                            <span class="tag">Role-Based System</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p id="project-count" class="project-count"></p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-intro">
+                Have a question or want to work together? Send me a message!
+            </p>
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name"
+                           placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message"
+                              placeholder="Your message here..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+            <div id="form-message" class="form-message"></div>
+        </section>
+
+        <!-- GitHub Repos Section -->
+        <section id="github" class="section-github">
+            <h2 class="section-title">My GitHub Projects</h2>
+            <p class="github-intro">Live repositories fetched directly from my GitHub profile</p>
+            <div id="github-results" class="github-grid"></div>
+            <p id="github-error" class="github-error"></p>
+        </section>
+
+        <!-- Quotes Section -->
+        <section id="quote" class="section-quote">
+            <h2 class="section-title">Daily Inspiration</h2>
+            <div class="quote-box">
+                <p id="quote-text">Loading quote...</p>
+                <p id="quote-author"></p>
+                <button id="new-quote-btn">✨ New Quote</button>
+                <p id="quote-error" class="quote-error"></p>
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section id="music" class="section-music">
+            <h2 class="section-title">Music Search</h2>
+            <div class="music-search-box">
+                <input type="text" id="music-input" placeholder="Search for an artist or song..." />
+                <button id="music-search-btn">🎵 Search</button>
+            </div>
+            <p id="music-error" class="music-error"></p>
+            <div id="music-results" class="music-results"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Faisal Bayounis. Built with passion and code.</p>
+            <p class="visit-timer">⏱️ You have been visiting for: <span id="visit-time">0s</span></p>
+        </footer>
+    </div>
+
+    <!-- Script loaded at end for performance -->
+    <script src="js/script.js" defer></script>
+</body>
+</html>

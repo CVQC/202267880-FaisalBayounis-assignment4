@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Faisal Bayounis - Aspiring Web Developer Portfolio showcasing projects, skills, and contact information.">
+    <meta name="theme-color" content="#3498db">
     <title>Faisal Bayounis | Web Developer Portfolio</title>
 
     <!-- Performance: Preconnect to external APIs -->
@@ -16,27 +17,32 @@
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body onload="window.scrollTo(0, 0);">
-    <!-- Greeting Message -->
-    <div id="greeting-banner" class="greeting-banner">
+<body>
+
+    <!-- Skip to main content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Greeting Banner -->
+    <div id="greeting-banner" class="greeting-banner" role="banner" aria-label="Welcome banner">
         <p id="greeting"></p>
-        <div id="name-prompt" class="name-prompt">
-            <input type="text" id="visitor-name-input" placeholder="Enter your name..." maxlength="30" />
-            <button id="save-name-btn">👋 Save Name</button>
-            <button id="skip-name-btn">Skip</button>
+        <div id="name-prompt" class="name-prompt" aria-live="polite">
+            <input type="text" id="visitor-name-input" placeholder="Enter your name..." maxlength="30" aria-label="Enter your name" />
+            <button id="save-name-btn" aria-label="Save your name">👋 Save Name</button>
+            <button id="skip-name-btn" aria-label="Skip name entry">Skip</button>
         </div>
-        <p id="returning-msg" class="returning-msg"></p>
-        <button id="reset-name-btn" class="reset-name-btn">✏️ Change Name</button>
+        <p id="returning-msg" class="returning-msg" aria-live="polite"></p>
+        <button id="reset-name-btn" class="reset-name-btn" aria-label="Change your name">✏️ Change Name</button>
     </div>
 
-    <div class="container">
+    <div class="container" id="main-content">
+
         <!-- Header & Navigation -->
         <header class="header">
             <div class="header-text">
                 <h1>Faisal Bayounis</h1>
                 <p class="tagline">Aspiring Web Developer | Building the Future</p>
             </div>
-            <nav>
+            <nav aria-label="Main navigation">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -47,15 +53,15 @@
                     <li><a href="#music">Music</a></li>
                 </ul>
             </nav>
-            <button id="theme-toggle" aria-label="Toggle dark mode">
-                <span class="theme-icon">🌙</span>
+            <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+                <span class="theme-icon" aria-hidden="true">🌙</span>
             </button>
         </header>
 
         <!-- About Section -->
-        <section id="about" class="section-about">
+        <section id="about" class="section-about" aria-labelledby="about-title">
             <div class="about-content">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" id="about-title">About Me</h2>
                 <p class="about-text">
                     I'm a computer science student passionate about creating clean, user-friendly websites
                     that solve real problems. I love learning new technologies and building projects that
@@ -66,71 +72,71 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="section-skills">
-            <h2 class="section-title">Skills</h2>
+        <section id="skills" class="section-skills" aria-labelledby="skills-title">
+            <h2 class="section-title" id="skills-title">Skills</h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
+                <div class="skill-card" tabindex="0">
+                    <div class="skill-icon" aria-hidden="true">🎨</div>
                     <h3>Frontend</h3>
                     <p>HTML5, CSS3, JavaScript, Responsive Design</p>
-                    <div class="skill-extra">
+                    <div class="skill-extra" aria-hidden="true">
                         <p>I build responsive, accessible UIs using modern CSS techniques like Flexbox and Grid.</p>
                     </div>
-                    <button class="skill-toggle">Show more ▼</button>
+                    <button class="skill-toggle" aria-expanded="false" aria-controls="skill-extra-1">Show more ▼</button>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
+                <div class="skill-card" tabindex="0">
+                    <div class="skill-icon" aria-hidden="true">⚙️</div>
                     <h3>Development</h3>
                     <p>Git, VS Code, Chrome DevTools, Debugging</p>
-                    <div class="skill-extra">
+                    <div class="skill-extra" aria-hidden="true">
                         <p>I use Git for version control and Chrome DevTools to debug and optimize performance.</p>
                     </div>
-                    <button class="skill-toggle">Show more ▼</button>
+                    <button class="skill-toggle" aria-expanded="false" aria-controls="skill-extra-2">Show more ▼</button>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">📱</div>
+                <div class="skill-card" tabindex="0">
+                    <div class="skill-icon" aria-hidden="true">📱</div>
                     <h3>Design</h3>
                     <p>Flexbox, Grid, Mobile-First, UI/UX Principles</p>
-                    <div class="skill-extra">
+                    <div class="skill-extra" aria-hidden="true">
                         <p>I follow a mobile-first approach and apply UI/UX principles for clean, user-friendly layouts.</p>
                     </div>
-                    <button class="skill-toggle">Show more ▼</button>
+                    <button class="skill-toggle" aria-expanded="false" aria-controls="skill-extra-3">Show more ▼</button>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🚀</div>
+                <div class="skill-card" tabindex="0">
+                    <div class="skill-icon" aria-hidden="true">🚀</div>
                     <h3>Learning</h3>
                     <p>React, Node.js, APIs, Database Design</p>
-                    <div class="skill-extra">
+                    <div class="skill-extra" aria-hidden="true">
                         <p>Currently learning React and backend development to become a full-stack developer.</p>
                     </div>
-                    <button class="skill-toggle">Show more ▼</button>
+                    <button class="skill-toggle" aria-expanded="false" aria-controls="skill-extra-4">Show more ▼</button>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section-projects">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="project-controls" aria-label="Project controls">
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="coe">COE</button>
-                    <button class="filter-btn" data-filter="cs">CS</button>
+        <section id="projects" class="section-projects" aria-labelledby="projects-title">
+            <h2 class="section-title" id="projects-title">Featured Projects</h2>
+            <div class="project-controls" aria-label="Project filter and sort controls">
+                <div class="project-filters" role="group" aria-label="Filter projects by category">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-btn" data-filter="coe" aria-pressed="false">COE</button>
+                    <button class="filter-btn" data-filter="cs" aria-pressed="false">CS</button>
                 </div>
                 <div class="project-sort">
                     <label for="sort-select">Sort by:</label>
-                    <select id="sort-select">
+                    <select id="sort-select" aria-label="Sort projects">
                         <option value="default">Default</option>
                         <option value="name-asc">Name A→Z</option>
                         <option value="name-desc">Name Z→A</option>
                     </select>
                 </div>
             </div>
-            <div class="projects-grid">
-                <div class="project-card" data-category="coe">
+            <div class="projects-grid" role="list" aria-label="Projects list">
+                <div class="project-card" data-category="coe" role="listitem">
                     <div class="project-image">
                         <img src="assets/images/logisimicon_94525.png"
-                             alt="16-Bit Processor Simulation Screenshot"
+                             alt="Logisim icon representing 16-Bit Processor Simulation project"
                              loading="lazy"
                              width="400" height="250">
                     </div>
@@ -139,7 +145,7 @@
                         <p>Designed and implemented a 16-bit processor using fundamental digital logic components.
                         The project demonstrates a strong understanding of computer architecture,
                         binary operations, and instruction execution at the hardware level.</p>
-                        <div class="project-tags">
+                        <div class="project-tags" aria-label="Technologies used">
                             <span class="tag">Digital Logic</span>
                             <span class="tag">Computer Architecture</span>
                             <span class="tag">Processor Simulation</span>
@@ -147,10 +153,10 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="cs">
+                <div class="project-card" data-category="cs" role="listitem">
                     <div class="project-image">
                         <img src="assets/images/javafx_logo_color_1r.jpg"
-                             alt="Event Management System Screenshot"
+                             alt="JavaFX logo representing Event Management System project"
                              loading="lazy"
                              width="400" height="250">
                     </div>
@@ -159,7 +165,7 @@
                         <p>Developed a JavaFX-based event management system featuring both admin and user interfaces.
                         Administrators can create and manage events, while users can browse and book available events
                         through an interactive and user-friendly interface.</p>
-                        <div class="project-tags">
+                        <div class="project-tags" aria-label="Technologies used">
                             <span class="tag">Java</span>
                             <span class="tag">JavaFX</span>
                             <span class="tag">Role-Based System</span>
@@ -167,74 +173,89 @@
                     </div>
                 </div>
             </div>
-            <p id="project-count" class="project-count"></p>
+            <p id="project-count" class="project-count" aria-live="polite"></p>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section-contact">
-            <h2 class="section-title">Get In Touch</h2>
+        <section id="contact" class="section-contact" aria-labelledby="contact-title">
+            <h2 class="section-title" id="contact-title">Get In Touch</h2>
             <p class="contact-intro">
                 Have a question or want to work together? Send me a message!
             </p>
-            <form id="contact-form" class="contact-form" novalidate>
+            <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
                 <div class="form-group">
-                    <label for="name">Name *</label>
+                    <label for="name">Name <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
                     <input type="text" id="name" name="name"
-                           placeholder="Your Name" required>
+                           placeholder="Your Name" required autocomplete="name"
+                           aria-required="true" aria-describedby="name-error">
+                    <span id="name-error" class="field-error" role="alert" aria-live="polite"></span>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email *</label>
+                    <label for="email">Email <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
                     <input type="email" id="email" name="email"
-                           placeholder="email@example.com" required>
+                           placeholder="email@example.com" required autocomplete="email"
+                           aria-required="true" aria-describedby="email-error">
+                    <span id="email-error" class="field-error" role="alert" aria-live="polite"></span>
                 </div>
                 <div class="form-group">
-                    <label for="message">Message *</label>
+                    <label for="message">Message <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
                     <textarea id="message" name="message"
-                              placeholder="Your message here..." required></textarea>
+                              placeholder="Your message here..." required
+                              aria-required="true" aria-describedby="message-error"></textarea>
+                    <span id="message-error" class="field-error" role="alert" aria-live="polite"></span>
                 </div>
                 <button type="submit" class="btn-submit">Send Message</button>
             </form>
-            <div id="form-message" class="form-message"></div>
+            <div id="form-message" class="form-message" role="alert" aria-live="assertive"></div>
         </section>
 
         <!-- GitHub Repos Section -->
-        <section id="github" class="section-github">
-            <h2 class="section-title">My GitHub Projects</h2>
+        <section id="github" class="section-github" aria-labelledby="github-title">
+            <h2 class="section-title" id="github-title">My GitHub Projects</h2>
             <p class="github-intro">Live repositories fetched directly from my GitHub profile</p>
-            <div id="github-results" class="github-grid"></div>
-            <p id="github-error" class="github-error"></p>
+            <div id="github-loading" class="loading-state" aria-live="polite">
+                <div class="skeleton-grid">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+            </div>
+            <div id="github-results" class="github-grid" aria-label="GitHub repositories"></div>
+            <p id="github-error" class="github-error" role="alert" aria-live="polite"></p>
         </section>
 
         <!-- Quotes Section -->
-        <section id="quote" class="section-quote">
-            <h2 class="section-title">Daily Inspiration</h2>
+        <section id="quote" class="section-quote" aria-labelledby="quote-title">
+            <h2 class="section-title" id="quote-title">Daily Inspiration</h2>
             <div class="quote-box">
-                <p id="quote-text">Loading quote...</p>
-                <p id="quote-author"></p>
-                <button id="new-quote-btn">✨ New Quote</button>
-                <p id="quote-error" class="quote-error"></p>
+                <p id="quote-text" aria-live="polite">Loading quote...</p>
+                <p id="quote-author" aria-live="polite"></p>
+                <button id="new-quote-btn" aria-label="Load a new inspirational quote">✨ New Quote</button>
+                <p id="quote-error" class="quote-error" role="alert" aria-live="polite"></p>
             </div>
         </section>
 
         <!-- Music Section -->
-        <section id="music" class="section-music">
-            <h2 class="section-title">Music Search</h2>
+        <section id="music" class="section-music" aria-labelledby="music-title">
+            <h2 class="section-title" id="music-title">Music Search</h2>
             <div class="music-search-box">
-                <input type="text" id="music-input" placeholder="Search for an artist or song..." />
-                <button id="music-search-btn">🎵 Search</button>
+                <input type="text" id="music-input"
+                       placeholder="Search for an artist or song..."
+                       aria-label="Search for music" />
+                <button id="music-search-btn" aria-label="Search for music">🎵 Search</button>
             </div>
-            <p id="music-error" class="music-error"></p>
-            <div id="music-results" class="music-results"></div>
+            <p id="music-error" class="music-error" role="alert" aria-live="polite"></p>
+            <div id="music-results" class="music-results" aria-label="Music search results" aria-live="polite"></div>
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer" role="contentinfo">
             <p>&copy; 2026 Faisal Bayounis. Built with passion and code.</p>
-            <p class="visit-timer">⏱️ You have been visiting for: <span id="visit-time">0s</span></p>
+            <p class="visit-timer">⏱️ You have been visiting for: <span id="visit-time" aria-live="off">0s</span></p>
         </footer>
-    </div>
 
-    <!-- Script loaded at end for performance -->
+    </div><!-- end .container -->
+
     <script src="js/script.js" defer></script>
 </body>
 </html>

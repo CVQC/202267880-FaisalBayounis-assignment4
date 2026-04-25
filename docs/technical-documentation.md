@@ -8,7 +8,9 @@
 This is the final, production-ready version of a personal portfolio website built entirely with HTML5, CSS3, and vanilla JavaScript. Assignment 4 builds on Assignment 3 by adding UI/UX enhancements, accessibility improvements, performance optimizations, professional code quality, and a live Vercel deployment — resulting in a complete, real-world-ready web application.
 
 **Live Site:** https://202267880-faisal-bayounis-assignmen.vercel.app  
-**GitHub Repository:** https://github.com/CVQC/202267880-FaisalBayounis-assignment4
+**GitHub Repository:** https://github.com/CVQC/202267880-FaisalBayounis-assignment4  
+**Demo Video:** `presentation/demo-video.mp4`  
+**Demo Video Backup:** https://drive.google.com/file/d/1CiX-pgxdmMEGzLKabeW1FOoJ9r_LoKr_/view?usp=share_link
 
 ---
 
@@ -23,6 +25,9 @@ This is the final, production-ready version of a personal portfolio website buil
 │   └── script.js               → All JavaScript logic and interactivity
 ├── assets/
 │   └── images/                 → Project images
+├── presentation/
+│   ├── demo-video.mp4          → Submitted demo video
+│   └── backup-link.txt         → Google Drive backup link for the demo video
 └── docs/
     ├── ai-usage-report.md      → AI tools usage documentation
     └── technical-documentation.md → This file
@@ -308,7 +313,20 @@ The application is deployed on **Vercel** with automatic CI/CD:
 
 ---
 
-## 9. Browser Compatibility
+## 9. Submission Artifacts
+
+| Artifact | Location | Purpose |
+|----------|----------|---------|
+| Demo video | `presentation/demo-video.mp4` | Main submitted walkthrough video |
+| Demo video backup | `presentation/backup-link.txt` | Google Drive link in case the uploaded MP4 has playback issues |
+| README demo section | `README.md` | Public-facing link to both the local MP4 and backup video |
+
+The backup video is hosted on Google Drive:
+https://drive.google.com/file/d/1CiX-pgxdmMEGzLKabeW1FOoJ9r_LoKr_/view?usp=share_link
+
+---
+
+## 10. Browser Compatibility
 
 - ✅ Google Chrome
 - ✅ Mozilla Firefox
@@ -318,7 +336,7 @@ The application is deployed on **Vercel** with automatic CI/CD:
 
 ---
 
-## 10. Known Limitations
+## 11. Known Limitations
 
 - Contact form does not send real emails — simulated only (no backend)
 - iTunes previews limited to 30 seconds per track

@@ -73,6 +73,9 @@ A fully polished, production-ready personal portfolio website built with HTML5, 
 │   └── script.js
 ├── assets/
 │   └── images/
+├── presentation/
+│   ├── demo-video.mp4
+│   └── backup-link.txt
 └── docs/
     ├── ai-usage-report.md
     └── technical-documentation.md
@@ -131,6 +134,12 @@ All AI-generated code was reviewed, understood, tested, and modified before use.
 |-|------|
 | 🔗 **Live Site** | [https://202267880-faisal-bayounis-assignmen.vercel.app](https://202267880-faisal-bayounis-assignmen.vercel.app) |
 | 📁 **GitHub Repository** | [https://github.com/CVQC/202267880-FaisalBayounis-assignment4](https://github.com/CVQC/202267880-FaisalBayounis-assignment4) |
+
+## 🎥 Demo Video
+
+The demo video is included at [`presentation/demo-video.mp4`](presentation/demo-video.mp4).
+
+Backup Google Drive link: [https://drive.google.com/file/d/1CiX-pgxdmMEGzLKabeW1FOoJ9r_LoKr_/view?usp=share_link](https://drive.google.com/file/d/1CiX-pgxdmMEGzLKabeW1FOoJ9r_LoKr_/view?usp=share_link)
 
 ---
 
